@@ -15,6 +15,10 @@ jobs:
     name: Build and deploy site
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
       - uses: upptime/uptime-monitor@v1.43.13
         with:
           command: "site"
