@@ -1,0 +1,21 @@
+# Upptime config — TableCash status page
+# Docs: https://upptime.js.org/docs/configuration
+owner: jjoseph18
+repo: status
+
+sites:
+  - name: App backend
+    url: https://ztsnyzsukmtwimlmyqaa.supabase.co/functions/v1/health
+  - name: Website
+    url: https://tablecash.app
+
+status-website:
+  cname: status.tablecash.app
+  name: TableCash
+  introTitle: "TableCash status"
+  introMessage: Live uptime and reliability for the TableCash app and website.
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/jjoseph18/status

@@ -1,0 +1,21 @@
+name: Static Site CI
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  repository_dispatch:
+    types: [site]
+  workflow_dispatch:
+  push:
+    paths:
+      - ".upptimerc.yml"
+      - ".github/workflows/site.yml"
+jobs:
+  release:
+    name: Build and deploy site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: upptime/uptime-monitor@v1.32.1
+        with:
+          command: "site"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
